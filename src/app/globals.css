@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+
+/* Gradient border effect using pseudo-elements */
+
+.border-gradient {
+    position: relative;
+}
+
+.border-gradient::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    /* Controls border thickness */
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient( to right, #ff4d4d 10%, /* 10% Reddish */
+    white 40%, /* 30% White (10% + 30% = 40%) */
+    #ff9900 100%/* 60% Orange (40% + 60% = 100%) */
+    );
+}
+
+
+/* Button Styling */
+.btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-weight: 600;
+    color: white;
+    background-color: #ff9900;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(255, 153, 0, 0.3);
+    transition: background 0.3s ease-in-out, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e68900;
+    transform: scale(1.05);
+}
+
+/* Centered Grid Layout */
+.centered-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* src/app/globals.css */
+
+/* Existing global styles... */
+
+/* Result component styles */
+.result-container {
+    background: linear-gradient(to bottom, #1a1a1a, #4a2c2c);
+    padding: 40px;
+    color: white;
+    font-family: Arial, sans-serif;
+    max-width: 1200px; /* Wider to accommodate left-right layout */
+    margin: 0 auto;
+    border-radius: 0;
+  }
+  
+  .result-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  .result-content {
+    border: 2px solid #ff4500; /* Orange border matching the image */
+    border-radius: 10px; /* Rounded corners for the content box */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8); /* Slightly transparent black background */
+    display: flex;
+    gap: 20px; /* Space between card and points */
+    align-items: center;
+  }
+  
+  .result-card {
+    flex: 1; /* Takes up half the space */
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .result-main-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background: linear-gradient(to right, #ff4500, #ff8c00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .result-points {
+    flex: 1; /* Takes up half the space */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .result-results-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .result-results-list li {
+    font-size: 1rem;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .result-active-result {
+    color: white !important;
+  }
+  
+  .result-bullet {
+    color: #ff4500;
+    font-size: 1.2rem;
+  }
+  
+  .result-active-result .result-bullet {
+    color: #ff4500; /* Matches the orange bullet in the image */
+  }
+  
+  .result-checkmark {
+    color: #00ff00;
+    margin-left: 10px;
+    font-size: 1rem;
+  }
+  
+  .result-book-call-button {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px; /* Spacing from the list */
+    align-self: center; /* Center the button */
+  }
+  
+  .result-book-call-button:hover {
+    background-color: #ff8c00;
+  }
